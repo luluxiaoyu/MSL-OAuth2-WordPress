@@ -36,7 +36,8 @@ public function get_authorization_url($action) {
     public function handle_callback() {
         try {
             if (!isset($_GET['code']) || !isset($_GET['state'])) {
-                throw new Exception('缺少必要参数');
+                wp_redirect(add_query_arg('msl_oauth_error', 'no_code', wp_login_url()));
+                exit;
             }
 
             $state = $_GET['state'];
@@ -44,7 +45,8 @@ public function get_authorization_url($action) {
             delete_transient('msl_oauth_state_' . $state);
 
             if (!$action || !wp_verify_nonce($state, 'msl_oauth_' . $action)) {
-                throw new Exception('无效的请求');
+                wp_redirect(add_query_arg('msl_oauth_error', 'expired', wp_login_url()));
+                exit;
             }
 
             $token = $this->exchange_code($_GET['code']);
