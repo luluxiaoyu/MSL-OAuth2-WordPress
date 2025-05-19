@@ -1,0 +1,19 @@
+/* MSL OAuth按钮样式 */
+.msl-oauth-container {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.msl-oauth-container a {
+    display: block;
+    padding: 12px;
+    background: #0073aa;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.msl-oauth-container a:hover {
+    background: #005177;
+}
