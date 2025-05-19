@@ -3,8 +3,7 @@
  * Plugin Name: MSL Account OAuth
  * Plugin URI: https://github.com/MSLTeam
  * Description: 为您的WordPress集成MSL统一身份验证(用户中心)登录！
- * Version: 1.0
- * Plugin Name: PDFjs Viewer - Embed PDFs
+ * Version: 1.0.1
  * Author: <a href="https://github.com/MSLTeam">MSLTeam</a> <a href="https://github.com/luluxiaoyu">luluxiaoyu</a>
  * Contributors: luluxiaoyu
  * License: GPL-3.0
@@ -83,7 +82,9 @@ add_action('login_init', function() {
 add_action('login_message', function($message) {
     if (isset($_GET['msl_oauth_error'])) {
         $error_messages = [
-            'unbound' => '该MSL账户未绑定，请先使用密码登录后在个人中心绑定'
+            'unbound' => '该MSL账户未绑定，请先使用密码登录后在个人中心绑定',
+            'no_code' => '非法登录参数！',
+            'expired' => '登录请求已过期！请重新登录！',
         ];
         $error_code = sanitize_text_field($_GET['msl_oauth_error']);
         return '<div id="login_error">'.esc_html($error_messages[$error_code] ?? $_GET['msl_oauth_error']).'</div>';
