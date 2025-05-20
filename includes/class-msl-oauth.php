@@ -30,7 +30,7 @@ public function get_authorization_url($action) {
         'redirect_uri'  => rawurlencode($redirect_uri),
         'state'         => $state,
         'scope'         => 'user_info',
-    ], 'https://user.mslmc.net/oauth');
+    ], 'https://user.mslmc.net/oauth/authorize');
 }
 
     public function handle_callback() {
