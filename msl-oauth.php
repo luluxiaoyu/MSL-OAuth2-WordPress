@@ -3,7 +3,7 @@
  * Plugin Name: MSL Account OAuth
  * Plugin URI: https://github.com/MSLTeam
  * Description: 为您的WordPress集成MSL统一身份验证(用户中心)登录！
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: <a href="https://github.com/MSLTeam">MSLTeam</a> <a href="https://github.com/luluxiaoyu">luluxiaoyu</a>
  * Contributors: luluxiaoyu
  * License: GPL-3.0
